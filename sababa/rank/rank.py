@@ -20,4 +20,4 @@ def rank_average(s, dist):
 # art: article in JSON format
 # dist: language distribution
 def rank_article(art, dist):
-	return rank_average(dist, art[text])
+	return rank_average(dist, art["text"])
