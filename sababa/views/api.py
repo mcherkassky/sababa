@@ -39,10 +39,10 @@ def article(user_id, article_type):
 
     article = user.get_article(article_type)
 
-    question = {'text': 'What is this thing?',
-                'choices': ['a', 'b', 'c', 'd'],
-                'answerText': 'b',
-                'answerNum': 2}
+    question = {"text": "What is this thing?",
+                "choices": ["a", "b", "c", "d"],
+                "answerText": "b",
+                "answerNum": 2}
 
     response = '{' + '"article":{},"question":{}'.format(article.to_json(), json.dumps(question)) + '}'
 

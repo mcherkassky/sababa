@@ -7,6 +7,10 @@ import re
 from sababa import models
 from sababa.models import *
 
+from sababa.rank import distribution
+from sababa.rank.rank import rank_article
+
+
 manager = Manager(app)
 
 def _make_context():
@@ -30,7 +34,8 @@ def score_articles():
         if article.score:
             continue
         else:
-            pass #score article
+            article.score = rank_article(article.text, distribution)[0][1] #score article
+            article.save()
 
 
 if __name__ == "__main__":
