@@ -39,7 +39,8 @@ def article(user_id, article_type):
 
     article = user.get_article(article_type)
 
-    question = {"text": "What is this thing?",
+    question = {"header": "Test your understanding",
+                "text": "What is this thing?",
                 "choices": ["a", "b", "c"],
                 "answerText": "b",
                 "answerNum": 2}
