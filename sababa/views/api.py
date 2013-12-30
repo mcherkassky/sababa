@@ -4,9 +4,12 @@ from settings import *
 from sababa import app
 from sababa.models import *
 
-@app.route('/test', methods=["POST"])
-def test():
-    import pdb; pdb.set_trace()
+from sababa.rank.translate import translate
+
+@app.route('/translate/<language>/<text>', methods=['GET'])
+def trans(text, language):
+    return json.dumps(translate(text, language))
+
 
 @app.route('/user/<user_id>', methods=['POST', 'GET'])
 def user(user_id):

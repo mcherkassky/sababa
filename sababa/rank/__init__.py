@@ -1,7 +1,3 @@
-__author__ = 'mcherkassky'
-import os
-import json
-
 f = open('distribution.txt', 'rb')
 
 distribution = {}
