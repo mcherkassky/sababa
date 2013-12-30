@@ -4,11 +4,10 @@ from settings import *
 from sababa import app
 from sababa.models import *
 
-@app.route('/user/<user_id>', methods=['POST, GET'])
+@app.route('/user/<user_id>', methods=['POST', 'GET'])
 def user(user_id):
     if request.method == 'POST':
         data = request.json
-
         try:
             user = User.objects.get(user_id=user_id)
         except:
