@@ -36,4 +36,5 @@ def rank_distribution(text, dist, threshold):
 # text: article text
 # dist: language distribution
 def rank_article(text, dist):
-	return rank_average(text, dist)
+	return rank_distribution(text, dist, 0.90)
+	#return rank_average(text, dist)
