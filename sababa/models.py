@@ -8,6 +8,8 @@ from mongoengine.dereference import DeReference
 
 from random import choice
 
+import rank
+
 from settings import *
 # from url import *
 
