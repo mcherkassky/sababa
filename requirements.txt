@@ -10,6 +10,8 @@ Werkzeug==0.9.4
 beautifulsoup4==4.3.2
 diffbot==0.2
 flask-mongoengine==0.7.0
+futures==2.1.5
+goslate==1.1.2
 gunicorn==18.0
 httplib2==0.8
 itsdangerous==0.23
