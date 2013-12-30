@@ -48,3 +48,13 @@ class User(Document, UserMixin, Base):
     screen_name = StringField()
     access_token_key = StringField()
     access_token_secret = StringField()
+
+class Article(Document, Base):
+    title = StringField()
+    url = StringField()
+    text = StringField()
+    author = StringField()
+    summary = StringField()
+
+    media = ListField()
+    date = StringField()
