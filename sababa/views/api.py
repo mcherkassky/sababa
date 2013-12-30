@@ -9,9 +9,12 @@ def user(user_id):
     if request.method == 'POST':
         data = request.json
 
-        user = User(user_id=data['user_id'],
-                    native=data['native'],
-                    learning=data['learning'])
+        try:
+            user = User.objects.get(user_id=user_id)
+        except:
+            user = User(user_id=user_id)
+        for key, value in data.items():
+            user[key] = value
 
         user.save()
         return user.to_json()
