@@ -12,19 +12,6 @@ def get_words_unique(text):
 	return set(get_words(text))
 
 
-# default ranking function
-# text: raw text to rank
-# dist: language distribution
-def rank_average(text, dist):
-	s = 0.0
-	words = [(w, dist.get(w) or 0.0) for w in get_words_unique(text)]
-	words = sorted(words, reverse=True, key = lambda t: t[1])
-	for w in words:
-		s += (dist.get(w[0]) or 0.0)
-	s = s / len(words)
-	return s
-
-
 # distribution ranking function
 # text: raw text to rank
 # dist: language distribution
@@ -32,6 +19,9 @@ def rank_average(text, dist):
 def rank_distribution(text, dist, threshold):
 	words = [(w, dist.get(w) or 0.0) for w in get_words(text)]
 	words = sorted(words, reverse=True, key = lambda t: t[1])
+	if(words is None or len(words) == 0):
+		return (0.0, [])
+
 	i = int(math.ceil(threshold * (len(words) - 1)))
 	score = words[i]
 	max_n = 100
