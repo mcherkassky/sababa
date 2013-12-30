@@ -6,6 +6,8 @@ from bs4 import *
 from bson import json_util, ObjectId, DBRef
 from mongoengine.dereference import DeReference
 
+from random import choice
+
 from settings import *
 # from url import *
 
@@ -41,9 +43,18 @@ class Base(object):
 
 class User(Document, UserMixin, Base):
     name = StringField()
-    screen_name = StringField()
-    access_token_key = StringField()
-    access_token_secret = StringField()
+    user_id = StringField()
+
+    level = FloatField()
+
+    native = StringField(default="Hebrew")
+    learning = StringField(default="English")
+
+    def get_article(self, category):
+        articles = Article.objects.filter(category=category)
+        selected = choice(articles)
+        return selected
+
 
 class Article(Document, Base):
     title = StringField()
