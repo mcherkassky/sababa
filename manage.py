@@ -3,6 +3,7 @@ from flask.ext.script import Manager, Shell
 from sababa import app
 
 from mongoengine import *
+from mongoengine.queryset import Q
 import re
 from sababa import models
 from sababa.models import *
@@ -34,7 +35,11 @@ def score_articles():
         if article.score:
             continue
         else:
-            article.score = rank_article(article.text, distribution)[0][1] #score article
+            try:
+                article.score = rank_article(article.text, distribution)[0][1] #score article
+            except:
+                print 'error'
+                continue
             article.save()
 
 

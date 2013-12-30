@@ -5,7 +5,7 @@ import json
 from bs4 import *
 from bson import json_util, ObjectId, DBRef
 from mongoengine.dereference import DeReference
-
+from mongoengine.queryset import Q
 from random import choice
 
 import rank
