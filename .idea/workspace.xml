@@ -7,7 +7,7 @@
     <file path="/run.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388336653917" ignored="false" />
     <file path="/settings.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388400384259" ignored="false" />
     <file path="/api.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388430593462" ignored="false" />
-    <file path="/manage.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388432521599" ignored="false" />
+    <file path="/manage.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388432696898" ignored="false" />
     <file path="/index.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388338464691" ignored="false" />
     <file path="/base.html" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388338550360" ignored="false" />
     <file path="/app.js" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388338733746" ignored="false" />
@@ -69,10 +69,8 @@
       <file leaf-file-name="manage.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="4" selection-start="319" selection-end="319" vertical-scroll-proportion="0.4532374">
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
+            <state line="5" column="9" selection-start="104" selection-end="104" vertical-scroll-proportion="-0.04556355">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,7 +132,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="262" />
+    <option name="x" value="180" />
     <option name="y" value="22" />
     <option name="width" value="1260" />
     <option name="height" value="760" />
@@ -396,14 +394,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="262" y="22" width="1260" height="760" extended-state="0" />
-    <editor active="true" />
+    <frame x="180" y="22" width="1260" height="760" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24958813" sideWeight="0.6953125" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24958813" sideWeight="0.6953125" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -597,10 +595,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="319" selection-end="319" vertical-scroll-proportion="0.4532374">
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
+        <state line="5" column="9" selection-start="104" selection-end="104" vertical-scroll-proportion="-0.04556355">
+          <folding />
         </state>
       </provider>
     </entry>

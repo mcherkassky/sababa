@@ -3,7 +3,7 @@ from flask.ext.script import Manager, Shell
 from sababa import app
 
 from mongoengine import *
-
+import re
 from sababa import models
 from sababa.models import *
 
@@ -15,10 +15,8 @@ def _make_context():
 @manager.command
 def format_text():
     articles = models.Article.objects()
-    
-    for article in articles:
-        import pdb; pdb.set_trace()
 
+    for article in articles:
         article.text = re.sub('(\n)+', '\n', article.text)
         article.text = re.sub('\n', '\n\n', article.text)
 
