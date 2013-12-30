@@ -39,10 +39,6 @@ class Base(object):
     def json(self):
         return json.dumps(self, default=mongoencode)
 
-    @classmethod
-    def build_from_json(cls):
-        print 'poop'
-
 class User(Document, UserMixin, Base):
     name = StringField()
     screen_name = StringField()
@@ -58,3 +54,27 @@ class Article(Document, Base):
 
     media = ListField()
     date = StringField()
+
+    category = StringField()
+    language = StringField(default="en")
+
+    @classmethod
+    def build_from_json(cls, json, category):
+        article = cls()
+        article.title = json.get('title','')
+        article.url = json.get('url','')
+        article.text = json.get('text','')
+        article.author = json.get('author','')
+        article.summary = json.get('summary','')
+
+        article.media = json.get('media','')
+        article.date = json.get('date','')
+
+        article.category = category
+
+        try:
+            article.save()
+        except:
+            return None
+
+        return article
