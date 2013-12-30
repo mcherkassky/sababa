@@ -2,11 +2,11 @@ import re
 import json
 
 # default ranking function
-# s: raw string to rank
+# text: raw text to rank
 # dist: language distribution
-def rank_average(s, dist):
+def rank_average(text, dist):
 	s = 0.0
-	words = [w.lower() for w in re.findall(r"[\w']+", s)]
+	words = [w.lower() for w in re.findall(r"[\w']+", text)]
 	unique_words = set()
 	for w in words:
 		if w in unique_words:
