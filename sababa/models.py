@@ -68,6 +68,8 @@ class Article(Document, Base):
     media = ListField()
     date = StringField()
 
+    score = FloatField()
+
     category = StringField()
     language = StringField(default="en")
 

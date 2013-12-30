@@ -22,6 +22,16 @@ def format_text():
 
         article.save()
 
+@manager.command
+def score_articles():
+    articles = models.Article.objects()
+
+    for article in articles:
+        if article.score:
+            continue
+        else:
+            pass #score article
+
 
 if __name__ == "__main__":
     manager.add_command('shell', Shell(make_context=_make_context))
