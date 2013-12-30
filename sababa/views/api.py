@@ -11,7 +11,6 @@ def test():
 @app.route('/user/<user_id>', methods=['POST', 'GET'])
 def user(user_id):
     if request.method == 'POST':
-        import pdb; pdb.set_trace()
         data = request.json
 
         try:
