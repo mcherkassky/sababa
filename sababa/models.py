@@ -47,7 +47,7 @@ class User(Document, UserMixin, Base):
     name = StringField()
     user_id = StringField()
 
-    level = IntField()
+    level = FloatField(default=.5)
 
     native = StringField(default="Hebrew")
     learning = StringField(default="English")
@@ -68,7 +68,7 @@ class Article(Document, Base):
     media = ListField()
     date = StringField()
 
-    score = FloatField()
+    score = FloatField(default=0)
 
     category = StringField()
     language = StringField(default="en")

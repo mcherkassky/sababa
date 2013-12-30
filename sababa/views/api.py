@@ -10,6 +10,19 @@ from sababa.rank.translate import translate
 def trans(text, language):
     return json.dumps(translate(text, language))
 
+@app.route('/user/<user_id>/<feedback>', methods=['GET'])
+def score(user_id, feedback):
+    user = User.objects().get(user_id=user_id)
+    if feedback == "correct":
+        user.score += .1
+    elif feedback == "incorrect":
+        user.score -= .1
+    else:
+        pass
+
+    user.save()
+    return user.to_json()
+
 
 @app.route('/user/<user_id>', methods=['POST', 'GET'])
 def user(user_id):
