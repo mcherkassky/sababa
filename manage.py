@@ -32,15 +32,12 @@ def score_articles():
     articles = models.Article.objects()
 
     for article in articles:
-        if article.score:
+        try:
+            article.score = rank_article(article.text, distribution)[0][1] #score article
+        except:
+            print 'error'
             continue
-        else:
-            try:
-                article.score = rank_article(article.text, distribution)[0][1] #score article
-            except:
-                print 'error'
-                continue
-            article.save()
+        article.save()
 
 
 if __name__ == "__main__":

@@ -30,7 +30,7 @@ def rank_average(text, dist):
 # dist: language distribution
 # threshold: how many words from the text are considered
 def rank_distribution(text, dist, threshold):
-	words = [(w, dist.get(w) or 0.0) for w in get_words_unique(text)]
+	words = [(w, dist.get(w) or 0.0) for w in get_words(text)]
 	words = sorted(words, reverse=True, key = lambda t: t[1])
 	i = int(math.ceil(threshold * (len(words) - 1)))
 	score = words[i]

@@ -15,7 +15,6 @@ def trans(text, language):
 def user(user_id):
     if request.method == 'POST':
         data = request.json
-
         try:
             user = User.objects.get(user_id=user_id)
         except:

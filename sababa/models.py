@@ -47,7 +47,7 @@ class User(Document, UserMixin, Base):
     name = StringField()
     user_id = StringField()
 
-    level = FloatField()
+    level = IntField()
 
     native = StringField(default="Hebrew")
     learning = StringField(default="English")
