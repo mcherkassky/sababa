@@ -10,7 +10,8 @@ from time import sleep
 from sababa.models import Article
 
 #feedzilla categories
-categories = {'Sports': 27,
+categories = {'Art': 13,
+              'Sports': 27,
               'Business': 22,
               'Technology': 30,
               'Politics': 3,
