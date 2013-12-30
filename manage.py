@@ -13,8 +13,17 @@ def _make_context():
     return {'app': app, 'models': models}
 
 @manager.command
-def delete_and_bootstrap():
-    pass
+def format_text():
+    articles = models.Article.objects()
+    
+    for article in articles:
+        import pdb; pdb.set_trace()
+
+        article.text = re.sub('(\n)+', '\n', article.text)
+        article.text = re.sub('\n', '\n\n', article.text)
+
+        article.save()
+
 
 if __name__ == "__main__":
     manager.add_command('shell', Shell(make_context=_make_context))
