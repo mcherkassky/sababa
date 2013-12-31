@@ -113,7 +113,7 @@ class Article(Document, Base):
         pattern = re.compile(answer, re.IGNORECASE)
         question = pattern.sub('_______', question)
 
-        choices = sample(self.get_words(), 2) + [answer]
+        choices = sample([word for word in self.get_words() if word != answer], 2) + [answer]
 
         shuffle(choices)
 
