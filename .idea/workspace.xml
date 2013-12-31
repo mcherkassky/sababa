@@ -17,7 +17,7 @@
     <file path="/Dummy.txt" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388391062420" ignored="false" />
     <file path="/settings_local.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388392418505" ignored="false" />
     <file path="/news_scraper.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388411542613" ignored="false" />
-    <file path="/translate.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388430870083" ignored="false" />
+    <file path="/translate.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388488772788" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="api.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sababa/views/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="0" selection-start="2059" selection-end="2059" vertical-scroll-proportion="0.46778712">
+            <state line="14" column="13" selection-start="459" selection-end="460" vertical-scroll-proportion="-10.230769">
               <folding>
                 <element signature="e#0#73#0" expanded="true" />
               </folding>
@@ -60,7 +60,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sababa/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="0" selection-start="3661" selection-end="3661" vertical-scroll-proportion="6.730769">
+            <state line="57" column="40" selection-start="1535" selection-end="1541" vertical-scroll-proportion="-4.576923">
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -77,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="translate.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="translate.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sababa/rank/translate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="22" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
+            <state line="12" column="29" selection-start="277" selection-end="277" vertical-scroll-proportion="0.57575756">
               <folding />
             </state>
           </provider>
@@ -142,12 +142,12 @@
         <option value="$PROJECT_DIR$/sababa/templates/index/index.html" />
         <option value="$PROJECT_DIR$/distribution.txt" />
         <option value="$PROJECT_DIR$/sababa/rank/question.py" />
-        <option value="$PROJECT_DIR$/sababa/rank/translate.py" />
         <option value="$PROJECT_DIR$/sababa/rank/rank.py" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/sababa/rank/__init__.py" />
         <option value="$PROJECT_DIR$/sababa/models.py" />
         <option value="$PROJECT_DIR$/sababa/views/api.py" />
+        <option value="$PROJECT_DIR$/sababa/rank/translate.py" />
       </list>
     </option>
   </component>
@@ -567,13 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sababa/rank/translate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="22" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="26" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
@@ -609,21 +602,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sababa/views/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="459" selection-end="460" vertical-scroll-proportion="-10.230769">
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sababa/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="0" selection-start="3661" selection-end="3661" vertical-scroll-proportion="6.730769">
+        <state line="57" column="40" selection-start="1535" selection-end="1541" vertical-scroll-proportion="-4.576923">
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sababa/views/api.py">
+    <entry file="file://$PROJECT_DIR$/sababa/rank/translate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="2059" selection-end="2059" vertical-scroll-proportion="0.46778712">
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
+        <state line="12" column="29" selection-start="277" selection-end="277" vertical-scroll-proportion="0.57575756">
+          <folding />
         </state>
       </provider>
     </entry>
