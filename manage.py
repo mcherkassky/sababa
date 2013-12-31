@@ -39,6 +39,13 @@ def score_articles():
             continue
         article.save()
 
+    articles = [article for article in articles]
+    articles.sort(key=lambda x: x.score)
+
+    for (i, article) in enumerate(articles):
+        article.rank = 1.0 * i / len(articles)
+        article.save()
+
 
 if __name__ == "__main__":
     manager.add_command('shell', Shell(make_context=_make_context))

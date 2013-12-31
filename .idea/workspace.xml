@@ -6,14 +6,14 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/run.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388336653917" ignored="false" />
     <file path="/settings.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388400384259" ignored="false" />
-    <file path="/api.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388441304698" ignored="false" />
-    <file path="/manage.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388440990954" ignored="false" />
+    <file path="/api.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388479521802" ignored="false" />
+    <file path="/manage.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388446762782" ignored="false" />
     <file path="/index.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388338464691" ignored="false" />
     <file path="/base.html" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388338550360" ignored="false" />
     <file path="/app.js" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388338733746" ignored="false" />
     <file path="/index.html" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388418258040" ignored="false" />
-    <file path="/__init__.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388437057486" ignored="false" />
-    <file path="/models.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388443318913" ignored="false" />
+    <file path="/__init__.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388477993837" ignored="false" />
+    <file path="/models.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388479832621" ignored="false" />
     <file path="/Dummy.txt" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388391062420" ignored="false" />
     <file path="/settings_local.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388392418505" ignored="false" />
     <file path="/news_scraper.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388411542613" ignored="false" />
@@ -49,7 +49,7 @@
       <file leaf-file-name="api.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sababa/views/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="25" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
+            <state line="70" column="0" selection-start="2009" selection-end="2009" vertical-scroll-proportion="-10.923077">
               <folding>
                 <element signature="e#0#73#0" expanded="true" />
               </folding>
@@ -60,7 +60,7 @@
       <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sababa/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="15" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.67942584">
+            <state line="92" column="37" selection-start="2497" selection-end="2497" vertical-scroll-proportion="0.4010554">
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -80,10 +80,8 @@
       <file leaf-file-name="manage.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="911" selection-end="911" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
+            <state line="10" column="0" selection-start="195" selection-end="273" vertical-scroll-proportion="-7.3076925">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,7 +89,7 @@
       <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sababa/rank/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="55" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+            <state line="9" column="0" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,17 +134,17 @@
         <option value="$PROJECT_DIR$/distribution.txt" />
         <option value="$PROJECT_DIR$/sababa/rank/question.py" />
         <option value="$PROJECT_DIR$/sababa/rank/translate.py" />
-        <option value="$PROJECT_DIR$/sababa/rank/__init__.py" />
-        <option value="$PROJECT_DIR$/sababa/views/api.py" />
         <option value="$PROJECT_DIR$/sababa/rank/rank.py" />
         <option value="$PROJECT_DIR$/manage.py" />
+        <option value="$PROJECT_DIR$/sababa/rank/__init__.py" />
+        <option value="$PROJECT_DIR$/sababa/views/api.py" />
         <option value="$PROJECT_DIR$/sababa/models.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-12" />
-    <option name="y" value="60" />
+    <option name="x" value="43" />
+    <option name="y" value="22" />
     <option name="width" value="1260" />
     <option name="height" value="760" />
   </component>
@@ -425,7 +423,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="60" width="1260" height="760" extended-state="0" />
+    <frame x="43" y="22" width="1260" height="760" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -572,9 +570,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sababa/rank/rank.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="47" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sababa/rank/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="55" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+        <state line="9" column="0" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -593,34 +598,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sababa/rank/rank.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="47" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="911" selection-end="911" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sababa/views/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="25" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
+        <state line="70" column="0" selection-start="2009" selection-end="2009" vertical-scroll-proportion="-10.923077">
           <folding>
             <element signature="e#0#73#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="195" selection-end="273" vertical-scroll-proportion="-7.3076925">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sababa/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="15" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.67942584">
+        <state line="92" column="37" selection-start="2497" selection-end="2497" vertical-scroll-proportion="0.4010554">
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

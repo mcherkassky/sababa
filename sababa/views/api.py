@@ -6,9 +6,33 @@ from sababa.models import *
 
 from sababa.rank.translate import translate
 
-@app.route('/translate/<language>/<text>', methods=['GET'])
-def trans(text, language):
-    return json.dumps(translate(text, language))
+print 'starting context index'
+
+#similar wwords shit
+import nltk
+idx = nltk.text.ContextIndex([word.lower( ) for word in nltk.corpus.brown.words( ) + nltk.corpus.reuters.words()])
+
+print 'finished context index'
+
+@app.route('/user/<user_id>/translate/<text>', methods=['GET'])
+def trans(text, user_id):
+    user = User.objects.get(user_id=user_id)
+    language = user.native
+    return translate(text, language)
+
+@app.route('/user/<user_id>/<feedback>', methods=['GET'])
+def score(user_id, feedback):
+    user = User.objects().get(user_id=user_id)
+    if feedback == "correct":
+        user.level += .1
+    elif feedback == "incorrect":
+        user.level -= .1
+    else:
+        pass
+
+    user.level = max(min(user.level, 1), 0)
+    user.save()
+    return user.to_json()
 
 
 @app.route('/user/<user_id>', methods=['POST', 'GET'])
@@ -38,11 +62,12 @@ def article(user_id, article_type):
 
     article = user.get_article(article_type)
 
-    question = {"header": "Test your understanding",
-                "text": "What is this thing?",
-                "choices": ["a", "b", "c"],
-                "answerText": "b",
-                "answerNum": 2}
+    # question = {"header": "Test your understanding",
+    #             "text": "What is this thing?",
+    #             "choices": ["a", "b", "c"],
+    #             "answerText": "b",
+    #             "answerNum": 2}
+    question = article.get_question(idx)
 
     response = '{' + '"article":{},"question":{}'.format(article.to_json(), json.dumps(question)) + '}'
 

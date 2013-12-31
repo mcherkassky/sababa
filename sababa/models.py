@@ -3,10 +3,14 @@ from flask_login import UserMixin
 import json
 
 from bs4 import *
+from random import shuffle
 from bson import json_util, ObjectId, DBRef
 from mongoengine.dereference import DeReference
 from mongoengine.queryset import Q
 from random import choice
+
+from sababa.rank import distribution
+from sababa.rank.rank import rank_article
 
 import rank
 
@@ -47,13 +51,18 @@ class User(Document, UserMixin, Base):
     name = StringField()
     user_id = StringField()
 
-    level = IntField()
+    level = FloatField(default=.5)
 
     native = StringField(default="Hebrew")
     learning = StringField(default="English")
 
     def get_article(self, category):
-        articles = Article.objects.filter(category=category)
+        score = self.level
+
+        top_score = score + .05
+        bottom_score = score - .05
+
+        articles = Article.objects(Q(rank__gte=bottom_score) & Q(rank__lte=top_score) & Q(category=category))
         selected = choice(articles)
         return selected
 
@@ -68,10 +77,28 @@ class Article(Document, Base):
     media = ListField()
     date = StringField()
 
-    score = FloatField()
+    score = FloatField(default=0)
+    rank = FloatField()
 
     category = StringField()
     language = StringField(default="en")
+
+    def get_question(self, idx):
+        question = "What is this thing?"
+        answer = "Apple".lower()
+        question = question.replace(answer, '_______')
+
+        choices = idx.similar_words(answer.lower(), n=2) + [answer]
+        shuffle(choices)
+        answer_index = choices.index(answer)
+
+        out = {"header": "Fill in the blank",
+                "text": question,
+                "choices": choices,
+                "answerText": answer,
+                "answerNum": answer_index}
+
+        return out
 
     @classmethod
     def build_from_json(cls, json, category):
