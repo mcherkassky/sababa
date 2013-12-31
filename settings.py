@@ -1,6 +1,6 @@
-MONGO_HOST = "paulo.mongohq.com"
-MONGO_DATABASE_NAME = "sababa"
-MONGO_PORT = 10093
+MONGO_HOST = "alex.mongohq.com"
+MONGO_DATABASE_NAME = "sababa_copy2"
+MONGO_PORT = 10010
 
 MONGO_USERNAME = "israel"
 MONGO_PASSWORD = "tech"
