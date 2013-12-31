@@ -2,6 +2,8 @@ import re
 import math
 import random
 
+sentence_regexp = re.compile('[.!?]')
+
 # get words from text
 def get_words(text):
 	return [w.lower() for w in re.findall(r"[\w']+", text)]
@@ -10,6 +12,18 @@ def get_words(text):
 # get unique words from text
 def get_words_unique(text):
 	return set(get_words(text))
+
+
+# get sentences from text containing words
+def get_sentences(text, words):
+	sentences = [s + '.' for s in sentence_regexp.split(text)]
+	result = dict.fromkeys(words)
+	for word in words:
+		for s in sentences:
+			if word in get_words_unique(s):
+				result[word] = s
+				break
+	return result
 
 
 # distribution ranking function
@@ -21,16 +35,18 @@ def rank_distribution(text, dist, threshold):
 	words = sorted(words, reverse=True, key = lambda t: t[1])
 	if(words is None or len(words) == 0):
 		return (0.0, [])
-
-	i = int(math.ceil(threshold * (len(words) - 1)))
-	score = words[i]
+	
+	unique_words = sorted(set(words), reverse=True, key = lambda t: t[1])
+	score = words[int(math.ceil(threshold * (len(words) - 1)))]
 	max_n = 100
 	n = 10
+	i = unique_words.index(score)
 	min_i = max(0, i-2)
-	max_i = min(len(words) - 1, i + n)
-	hard_words = words[min_i:max_i]
-	random_words = random.sample(hard_words, min(n, len(hard_words)))
-	return (score, random_words)
+	max_i = min(len(unique_words) - 1, i + n)
+	hard_words = unique_words[min_i:max_i]
+	random_words = [w[0] for w in random.sample(hard_words, min(n, len(hard_words)))]
+	print(random_words)
+	return (score, get_sentences(text, random_words))
 
 
 # rank an article
