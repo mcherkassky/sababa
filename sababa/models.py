@@ -9,6 +9,7 @@ from bson import json_util, ObjectId, DBRef
 from mongoengine.dereference import DeReference
 from mongoengine.queryset import Q
 from random import choice
+import requests
 
 from sababa.rank import distribution
 from sababa.rank.rank import rank_article
@@ -76,6 +77,10 @@ class User(Document, UserMixin, Base):
         selected = choice(articles)
         return selected
 
+def similar_words(word):
+    r = requests.get('http://api.wordnik.com:80/v4/word.json/{}/relatedWords?useCanonical=false&relationshipTypes=same-context&limitPerRelationshipType=10&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5'.format(word))
+
+    return r.json()[0]['words']
 
 class Article(Document, Base):
     title = StringField()
@@ -93,13 +98,13 @@ class Article(Document, Base):
     category = StringField()
     language = StringField(default="en")
 
-    def get_words(self, idx):
+    def get_words(self):
         score_out = rank_article(self.text, distribution)[1]
 
         words = score_out.keys()
         return words
 
-    def get_question(self, idx):
+    def get_question(self):
         score_out = rank_article(self.text, distribution)[1]
 
         answer = choice(score_out.keys())
@@ -108,7 +113,8 @@ class Article(Document, Base):
         pattern = re.compile(answer, re.IGNORECASE)
         question = pattern.sub('_______', question)
 
-        choices = sample(idx.similar_words(answer.lower(), n=20), 2) + [answer]
+        choices = sample(self.get_words(), 2) + [answer]
+
         shuffle(choices)
 
         answer_index = choices.index(answer)

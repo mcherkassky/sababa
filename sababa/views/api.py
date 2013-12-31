@@ -3,16 +3,18 @@ from flask.ext.login import current_user, login_user
 from settings import *
 from sababa import app
 from sababa.models import *
-
+import requests
 from sababa.rank.translate import translate
 
 print 'starting context index'
 
 #similar wwords shit
-import nltk
-idx = nltk.text.ContextIndex([word.lower( ) for word in nltk.corpus.brown.words( ) + nltk.corpus.reuters.words()])
+# import nltk
+# idx = nltk.text.ContextIndex([word.lower( ) for word in nltk.corpus.brown.words( ) + nltk.corpus.reuters.words()])
 
 print 'finished context index'
+
+
 
 @app.route('/user/<user_id>/translate/<text>', methods=['GET'])
 def trans(text, user_id):
@@ -67,8 +69,8 @@ def article(user_id, article_type):
     #             "choices": ["a", "b", "c"],
     #             "answerText": "b",
     #             "answerNum": 2}
-    question = article.get_question(idx)
-    words = article.get_words(idx)
+    question = article.get_question()
+    words = article.get_words()
 
     response = '{' + '"article":{},"question":{}, words:{}'.format(article.to_json(), json.dumps(question), json.dumps(words)) + '}'
 
