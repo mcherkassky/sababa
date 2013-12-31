@@ -53,7 +53,12 @@ class User(Document, UserMixin, Base):
     learning = StringField(default="English")
 
     def get_article(self, category):
-        articles = Article.objects.filter(category=category)
+        score = self.level
+
+        top_score = score + .05
+        bottom_score = score - .05
+
+        articles = Article.objects(Q(rank__gte=bottom_score) & Q(rank__lte=top_score) & Q(category=category))
         selected = choice(articles)
         return selected
 
@@ -69,6 +74,7 @@ class Article(Document, Base):
     date = StringField()
 
     score = FloatField(default=0)
+    rank = FloatField()
 
     category = StringField()
     language = StringField(default="en")

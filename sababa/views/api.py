@@ -20,6 +20,7 @@ def score(user_id, feedback):
     else:
         pass
 
+    user.score = max(min(user.score, 1), 0)
     user.save()
     return user.to_json()
 
