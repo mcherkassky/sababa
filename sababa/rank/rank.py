@@ -6,7 +6,8 @@ sentence_regexp = re.compile('[.!?]')
 
 # get words from text
 def get_words(text):
-	return [w for w in re.findall(r"[\w']+", text) if re.match("[a-z'-]+", w)]
+    words =  [w for w in re.findall(r"[\w']+", text) if re.match("[a-z'-]+", w)]
+    return [word for word in words if len(word) > 3]
 
 
 # get unique words from text

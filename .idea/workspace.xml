@@ -18,6 +18,7 @@
     <file path="/settings_local.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388392418505" ignored="false" />
     <file path="/news_scraper.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388411542613" ignored="false" />
     <file path="/translate.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388488772788" ignored="false" />
+    <file path="/rank.py" changelist="ff2b5573-c67e-4201-89a2-e28da0c30709" time="1388491037866" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,10 +58,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sababa/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="0" selection-start="3333" selection-end="3333" vertical-scroll-proportion="0.5462185">
+            <state line="114" column="0" selection-start="3333" selection-end="3333" vertical-scroll-proportion="-7.5">
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -104,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rank.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="rank.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sababa/rank/rank.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="4" selection-start="925" selection-end="925" vertical-scroll-proportion="0.0">
+            <state line="8" column="17" selection-start="136" selection-end="136" vertical-scroll-proportion="0.28787878">
               <folding />
             </state>
           </provider>
@@ -142,12 +143,12 @@
         <option value="$PROJECT_DIR$/sababa/templates/index/index.html" />
         <option value="$PROJECT_DIR$/distribution.txt" />
         <option value="$PROJECT_DIR$/sababa/rank/question.py" />
-        <option value="$PROJECT_DIR$/sababa/rank/rank.py" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/sababa/rank/__init__.py" />
         <option value="$PROJECT_DIR$/sababa/views/api.py" />
         <option value="$PROJECT_DIR$/sababa/rank/translate.py" />
         <option value="$PROJECT_DIR$/sababa/models.py" />
+        <option value="$PROJECT_DIR$/sababa/rank/rank.py" />
       </list>
     </option>
   </component>
@@ -574,13 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sababa/rank/rank.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="4" selection-start="925" selection-end="925" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sababa/rank/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
@@ -620,10 +614,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sababa/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="0" selection-start="3333" selection-end="3333" vertical-scroll-proportion="0.5462185">
+        <state line="114" column="0" selection-start="3333" selection-end="3333" vertical-scroll-proportion="-7.5">
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sababa/rank/rank.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="17" selection-start="136" selection-end="136" vertical-scroll-proportion="0.28787878">
+          <folding />
         </state>
       </provider>
     </entry>
