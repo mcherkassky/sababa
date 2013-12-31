@@ -6,8 +6,10 @@ from sababa.models import *
 
 from sababa.rank.translate import translate
 
-@app.route('/translate/<language>/<text>', methods=['GET'])
-def trans(text, language):
+@app.route('/user/<user_id>/translate/<text>', methods=['GET'])
+def trans(text, user_id):
+    user = User.objects.get(user_id=user_id)
+    language = user.native
     return json.dumps(translate(text, language))
 
 @app.route('/user/<user_id>/<feedback>', methods=['GET'])
