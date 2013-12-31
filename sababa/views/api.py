@@ -10,7 +10,7 @@ from sababa.rank.translate import translate
 def trans(text, user_id):
     user = User.objects.get(user_id=user_id)
     language = user.native
-    return json.dumps(translate(text, language))
+    return translate(text, language)
 
 @app.route('/user/<user_id>/<feedback>', methods=['GET'])
 def score(user_id, feedback):
