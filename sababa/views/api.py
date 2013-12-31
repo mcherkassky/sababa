@@ -68,7 +68,8 @@ def article(user_id, article_type):
     #             "answerText": "b",
     #             "answerNum": 2}
     question = article.get_question(idx)
+    words = article.get_words(idx)
 
-    response = '{' + '"article":{},"question":{}'.format(article.to_json(), json.dumps(question)) + '}'
+    response = '{' + '"article":{},"question":{}, words:{}'.format(article.to_json(), json.dumps(question), json.dumps(words)) + '}'
 
     return response

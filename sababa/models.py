@@ -1,9 +1,10 @@
 from mongoengine import *
 from flask_login import UserMixin
 import json
+import re
 
 from bs4 import *
-from random import shuffle
+from random import shuffle, sample
 from bson import json_util, ObjectId, DBRef
 from mongoengine.dereference import DeReference
 from mongoengine.queryset import Q
@@ -57,6 +58,15 @@ class User(Document, UserMixin, Base):
     learning = StringField(default="English")
 
     def get_article(self, category):
+        if category == 'Random':
+            category = choice(['Entertainment',
+                               'Technology',
+                               'Art',
+                               'Sports',
+                               'Business',
+                               'Politics',
+                               'Health',
+                               'Science'])
         score = self.level
 
         top_score = score + .05
@@ -83,13 +93,24 @@ class Article(Document, Base):
     category = StringField()
     language = StringField(default="en")
 
-    def get_question(self, idx):
-        question = "What is this thing?"
-        answer = "Apple".lower()
-        question = question.replace(answer, '_______')
+    def get_words(self, idx):
+        score_out = rank_article(self.text, distribution)[1]
 
-        choices = idx.similar_words(answer.lower(), n=2) + [answer]
+        words = score_out.keys()
+        return words
+
+    def get_question(self, idx):
+        score_out = rank_article(self.text, distribution)[1]
+
+        answer = choice(score_out.keys())
+        question = score_out[answer].replace('\n', '')
+
+        pattern = re.compile(answer, re.IGNORECASE)
+        question = pattern.sub('_______', question)
+
+        choices = sample(idx.similar_words(answer.lower(), n=20), 2) + [answer]
         shuffle(choices)
+
         answer_index = choices.index(answer)
 
         out = {"header": "Fill in the blank",
