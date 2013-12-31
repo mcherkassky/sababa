@@ -14,13 +14,13 @@ def trans(text, language):
 def score(user_id, feedback):
     user = User.objects().get(user_id=user_id)
     if feedback == "correct":
-        user.score += .1
+        user.level += .1
     elif feedback == "incorrect":
-        user.score -= .1
+        user.level -= .1
     else:
         pass
 
-    user.score = max(min(user.score, 1), 0)
+    user.level = max(min(user.level, 1), 0)
     user.save()
     return user.to_json()
 
