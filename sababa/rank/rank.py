@@ -6,7 +6,7 @@ sentence_regexp = re.compile('[.!?]')
 
 # get words from text
 def get_words(text):
-	return [w.lower() for w in re.findall(r"[\w']+", text)]
+	return [w for w in re.findall(r"[\w']+", text) if re.match("[a-z'-]+", w)]
 
 
 # get unique words from text
@@ -38,8 +38,7 @@ def rank_distribution(text, dist, threshold):
 	
 	unique_words = sorted(set(words), reverse=True, key = lambda t: t[1])
 	score = words[int(math.ceil(threshold * (len(words) - 1)))]
-	max_n = 100
-	n = 10
+	n = int(float(len(unique_words)) / 20.0)
 	i = unique_words.index(score)
 	min_i = max(0, i-2)
 	max_i = min(len(unique_words) - 1, i + n)
