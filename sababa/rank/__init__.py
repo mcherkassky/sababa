@@ -1,3 +1,5 @@
+import nltk
+
 f = open('distribution.txt', 'rb')
 
 distribution = {}

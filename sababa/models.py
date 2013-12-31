@@ -3,10 +3,14 @@ from flask_login import UserMixin
 import json
 
 from bs4 import *
+from random import shuffle
 from bson import json_util, ObjectId, DBRef
 from mongoengine.dereference import DeReference
 from mongoengine.queryset import Q
 from random import choice
+
+from sababa.rank import distribution
+from sababa.rank.rank import rank_article
 
 import rank
 
@@ -78,6 +82,23 @@ class Article(Document, Base):
 
     category = StringField()
     language = StringField(default="en")
+
+    def get_question(self, idx):
+        question = "What is this thing?"
+        answer = "Apple".lower()
+        question = question.replace(answer, '_______')
+
+        choices = idx.similar_words(answer.lower(), n=2) + [answer]
+        shuffle(choices)
+        answer_index = choices.index(answer)
+
+        out = {"header": "Fill in the blank",
+                "text": question,
+                "choices": choices,
+                "answerText": answer,
+                "answerNum": answer_index}
+
+        return out
 
     @classmethod
     def build_from_json(cls, json, category):

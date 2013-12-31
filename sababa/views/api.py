@@ -6,6 +6,14 @@ from sababa.models import *
 
 from sababa.rank.translate import translate
 
+print 'starting context index'
+
+#similar wwords shit
+import nltk
+idx = nltk.text.ContextIndex([word.lower( ) for word in nltk.corpus.brown.words( ) + nltk.corpus.reuters.words()])
+
+print 'finished context index'
+
 @app.route('/user/<user_id>/translate/<text>', methods=['GET'])
 def trans(text, user_id):
     user = User.objects.get(user_id=user_id)
@@ -54,11 +62,12 @@ def article(user_id, article_type):
 
     article = user.get_article(article_type)
 
-    question = {"header": "Test your understanding",
-                "text": "What is this thing?",
-                "choices": ["a", "b", "c"],
-                "answerText": "b",
-                "answerNum": 2}
+    # question = {"header": "Test your understanding",
+    #             "text": "What is this thing?",
+    #             "choices": ["a", "b", "c"],
+    #             "answerText": "b",
+    #             "answerNum": 2}
+    question = article.get_question(idx)
 
     response = '{' + '"article":{},"question":{}'.format(article.to_json(), json.dumps(question)) + '}'
 
