@@ -20,7 +20,7 @@ mongoengine==0.8.6
 nltk==2.0.4
 pybing==0.12
 pymongo==2.6.3
-requests==2.1.0
+requests==2.20.0
 simplejson==3.3.1
 urllib3==1.7.1
 wsgiref==0.1.2
